@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameVibe</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <script>
+    fetch('components/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error cargando navbar:', error));
+  </script>
+
+
+  <!--Formulario de Contacto-->
+  <div class="container d-flex justify-content-center align-items-center my-5" style="min-height: 80vh;">
+    <div class="card p-4 shadow" style="max-width: 500px; width: 100%;">
+      <h2 class="text-center mb-4">📩 Formulario de Contacto</h2>
+
+      <form action="enviar_formulario.php" method="post">
+        <!-- Nombre -->
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre Completo</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Juan Pérez" required>
+        </div>
+
+        <!-- Correo -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
+        </div>
+
+        <!-- Contraseña -->
+        <div class="mb-3">
+          <label for="contraseña" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="********" required>
+        </div>
+
+        <!-- Confirmar Contraseña -->
+        <div class="mb-3">
+          <label for="Confcontra" class="form-label">Confirmar Contraseña</label>
+          <input type="password" class="form-control" id="Confcontra" name="Confcontra" placeholder="********" required>
+        </div>
+
+        <!-- Teléfono con +56 -->
+        <div class="mb-3">
+          <label for="Telefono" class="form-label">Teléfono</label>
+          <div class="input-group">
+            <span class="input-group-text">+56</span>
+            <input type="text" class="form-control" id="Telefono" name="Telefono" placeholder="9 1234 5678" required>
+          </div>
+        </div>
+
+        <!-- Región -->
+        <div class="mb-3">
+          <label for="region" class="form-label">Región</label>
+          <select class="form-select" id="region" name="region" required onchange="actualizarComunas()">
+            <option value="" selected disabled>Seleccione la región</option>
+            <option value="RM">Región Metropolitana</option>
+            <option value="Arica">Arica y Parinacota</option>
+            <option value="Tarapaca">Tarapacá</option>
+            <option value="Antofagasta">Antofagasta</option>
+            <option value="Atacama">Atacama</option>
+            <option value="Coquimbo">Coquimbo</option>
+            <option value="Valparaiso">Valparaíso</option>
+            <option value="O’Higgins">O’Higgins</option>
+            <option value="Maule">Maule</option>
+            <option value="Ñuble">Ñuble</option>
+            <option value="Biobío">Biobío</option>
+            <option value="Araucanía">La Araucanía</option>
+            <option value="Los Rios">Los Ríos</option>
+            <option value="Los Lagos">Los Lagos</option>
+            <option value="Aysén">Aysén</option>
+            <option value="Magallanes">Magallanes</option>
+          </select>
+        </div>
+
+        <!-- Comuna -->
+        <div class="mb-3">
+          <label for="comuna" class="form-label">Comuna</label>
+          <select class="form-select" id="comuna" name="comuna" required>
+            <option value="" selected disabled>Seleccione la comuna</option>
+          </select>
+        </div>
+
+        <!-- Mensaje -->
+        <div class="mb-3">
+          <label for="mensaje" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Escriba su mensaje aquí..."
+            required></textarea>
+        </div>
+
+        <!-- Botón enviar -->
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="Javascript/formularioContacto.js"></script>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    fetch('components/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error cargando footer:', error));
+  </script>
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
