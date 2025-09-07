@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Juegos de Mesa - GameVibe</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('components/navbar.html')
+      .then(r => r.text()).then(html => document.getElementById('navbar-placeholder').innerHTML = html)
+      .catch(e => console.error('Error cargando navbar:', e));
+  </script>
+
+  <main class="container my-5">
+    <header class="mb-4 text-center">
+      <h1 class="h3">Juegos de Mesa</h1>
+      <p class="text-muted">Tableros, cartas y accesorios para jugar en familia.</p>
+    </header>
+
+    <!-- el renderer busca #consoles-grid o #products-grid y usa data-category -->
+    <section id="consoles-grid" data-category="JuegosDeMesa" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <!-- tarjetas inyectadas por Javascript/render-consoles.js -->
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('components/footer.html')
+      .then(r => r.text()).then(html => document.getElementById('footer-placeholder').innerHTML = html)
+      .catch(e => console.error('Error cargando footer:', e));
+  </script>
+
+  <!-- scripts: carga Cart antes del renderer -->
+  <script src="Javascript/render-consoles.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle producto - GameVibe</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('components/navbar.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('navbar-placeholder').innerHTML = html)
+      .catch(e => console.error('Error cargando navbar:', e));
+  </script>
+
+  <main id="product-page" class="container my-5">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="Game_Vibe_Store.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="Categorias.html" id="breadcrumb-category">Categoría</a></li>
+        <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-title">Nombre Producto</li>
+      </ol>
+    </nav>
+
+    <div class="row g-4">
+      <!-- Galería / Imágenes -->
+      <div class="col-lg-7">
+        <div class="card">
+          <div class="ratio ratio-4x3">
+            <img id="product-image" src="img/placeholder.png" alt="Imagen producto" class="img-fluid product-image">
+          </div>
+        </div>
+      </div>
+
+      <!-- Información del producto -->
+      <div class="col-lg-5">
+        <h1 class="h3" id="product-title">Nombre Producto</h1>
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="text-muted">SKU: <span id="product-sku">GV-0001</span></div>
+          <div class="fs-4 fw-bold text-primary" id="product-price">$0</div>
+        </div>
+
+        <hr>
+
+        <p class="text-muted" id="product-short">Descripción breve...</p>
+
+        <ul class="list-unstyled small text-muted mb-4" id="product-features"></ul>
+
+        <div class="row g-2 align-items-center">
+          <div class="col-auto">
+            <label for="cantidad" class="form-label small mb-0">Cantidad</label>
+            <input type="number" id="cantidad" class="form-control" min="1" max="99" value="1">
+          </div>
+          <div class="col-12 mt-3">
+            <button id="add-to-cart" type="button" class="btn btn-primary btn-lg w-100">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <div class="small text-muted">
+          Envío estimado: <span id="product-shipping">3-5 días hábiles</span> • Stock: <span id="product-stock"
+            class="fw-semibold text-success">Disponible</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('components/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('footer-placeholder').innerHTML = html)
+      .catch(e => console.error('Error cargando footer:', e));
+  </script>
+
+  <!-- carrito (necesario antes de usar Cart) -->
+  <script src="Javascript/cart.js"></script>
+  <!-- script que carga el producto según ?id=... y conecta el botón -->
+  <script src="Javascript/load-product.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
