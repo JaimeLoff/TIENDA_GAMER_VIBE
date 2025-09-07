@@ -261,3 +261,12 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* =========================
+   CATEGORIAS
+   ========================= */
+.card-img-top-fixed {
+    height: 220px;
+    /* O el tamaño que prefieras */
+    object-fit: cover;
+}
