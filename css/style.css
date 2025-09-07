@@ -1,6 +1,6 @@
 /* =========================
-   ESTILOS GENERALES
-   ========================= */
+    ESTILOS GENERALES
+    ========================= */
 body {
     background: linear-gradient(135deg, #141E30, #243B55);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,8 +12,8 @@ body {
 }
 
 /* =========================
-   NAVBAR
-   ========================= */
+    NAVBAR
+    ========================= */
 .navbar {
     background-color: #141E30 !important;
     padding: 0.8rem 1rem;
@@ -58,8 +58,8 @@ body {
 }
 
 /* =========================
-   LOGIN / FORMULARIOS
-   ========================= */
+    LOGIN / FORMULARIOS
+    ========================= */
 .card {
     border-radius: 1rem;
     background-color: rgba(30, 30, 47, 0.95);
@@ -69,7 +69,8 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeInUp 0.8s ease-in-out;
-    overflow: hidden; /* evita que la imagen sobresalga */
+    overflow: hidden;
+    /* evita que la imagen sobresalga */
 }
 
 .card:hover {
@@ -148,8 +149,22 @@ textarea {
 }
 
 /* =========================
-   SECCIONES / BANNER / NOTICIAS
-   ========================= */
+    ESTILOS DE VALIDACIÓN
+    ========================= */
+.invalid-feedback {
+    display: none;
+    color: #dc3545;
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+}
+
+.is-invalid+.invalid-feedback {
+    display: block;
+}
+
+/* =========================
+    SECCIONES / BANNER / NOTICIAS
+    ========================= */
 
 .hero {
     background: url('/img/Imagen\ Bienvenidos.jpg') no-repeat center center/cover;
@@ -229,8 +244,8 @@ h3 {
 }
 
 /* =========================
-   SOBRE NOSOTROS
-   ========================= */
+    SOBRE NOSOTROS
+    ========================= */
 .dark-section h2 {
     margin-bottom: 1rem;
 }
@@ -244,8 +259,8 @@ h3 {
 }
 
 /* =========================
-   FOOTER
-   ========================= */
+    FOOTER
+    ========================= */
 footer {
     background-color: #141E30;
     color: #ccc;
@@ -264,8 +279,8 @@ footer a:hover {
 }
 
 /* =========================
-   CATEGORIAS
-   ========================= */
+    CATEGORIAS
+    ========================= */
 .card-img-top-fixed {
     height: 200px;
     /* O el tamaño que prefieras */
@@ -277,21 +292,23 @@ footer a:hover {
 .card .card-img-top,
 .card img,
 img.category-img {
-  display: block;
-  width: 100%;
-  height: 220px;           /* ajusta alto según diseño (ej. 180, 220, 260) */
-  object-fit: cover;       /* recorta centrado sin deformar */
-  object-position: center;
-  margin: 0;
-  padding: 0;
-  border-radius: 0.5rem;
-  box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 220px;
+    /* ajusta alto según diseño (ej. 180, 220, 260) */
+    object-fit: cover;
+    /* recorta centrado sin deformar */
+    object-position: center;
+    margin: 0;
+    padding: 0;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
 }
 
 /* si usas .ratio, asegurar que la imagen no salga */
 .ratio img,
 .ratio .product-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
