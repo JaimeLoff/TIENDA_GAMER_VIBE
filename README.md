@@ -8,85 +8,83 @@ GameVibe es una tienda online de juegos de mesa y electrónicos que ofrece produ
 ## Estructura del Proyecto
 
 ```
-TIENDA_GAMER_VIBE/
+TIENDA_GAME_VIBE/
 │
 ├── components/
 │   ├── footer.html
 │   └── navbar.html
 │
 ├── css/
-│   └── [estilos CSS, si los agregas]
+│   └── style.css
+│
+├── data/
+│   └── products.json
 │
 ├── img/
-│   └── [imágenes usadas en el proyecto]
+│   └── (Imágenes, banners y logos del proyecto)
 │
 ├── Javascript/
-│   └── formularioContacto.js
+│   ├── formularioContacto.js
+│   ├── load-product.js
+│   ├── login-registro.js
+│   └── render-consoles.js
 │
 ├── Blogs.html
-├── contacto.html
+├── carrito.html
+├── categorias.html
+├── Coleccionables.html
+├── Consolas.html
+├── Contacto.html
+├── DetalleProducto.html
 ├── Game_Vibe_Store.html
-├── login.html
+├── JuegosdeMesa.html
+├── Login.html
+├── Perifericos.html
+├── registro.html
 └── SobreNosotros.html
 ```
 
 ---
 
-## Funcionalidades
+## Funcionalidades Clave
 
-### Navbar
-- Incluye enlaces a: `Sobre Nosotros`, `Categorías`, `Blogs` y `Contacto`.
-- Botones para iniciar sesión y registrar usuario.
-- Se carga dinámicamente desde `components/navbar.html`.
+### 1. Gestión Dinámica de Productos
+Para facilitar el mantenimiento, todo el catálogo de la tienda se gestiona desde `data/products.json`.
+-   **Carga Asíncrona**: El script `Javascript/load-product.js` utiliza la función `fetch` para leer los datos del JSON de forma asíncrona.
+-   **Renderizado por Categoría**: El script `Javascript/render-consoles.js` es un ejemplo de cómo se filtran y renderizan dinámicamente los productos en el DOM para las páginas de categorías, creando las tarjetas de producto sin necesidad de escribir HTML repetitivo.
 
-### Footer
-- Información de derechos de autor.
-- Iconos de métodos de pago.
-- Se carga dinámicamente desde `components/footer.html`.
+### 2. Formularios con Validación
+La lógica de los formularios de usuario se centraliza en `Javascript/login-registro.js`, ofreciendo un feedback instantáneo al usuario.
 
-### Contacto
-- Formulario con campos de:
-  - Nombre completo
-  - Correo electrónico
-  - Contraseña y confirmación
-  - Teléfono (+56 Chile)
-  - Región y comuna (dinámico con JavaScript)
-  - Mensaje
-- Validación básica mediante `required`.
-- Manejo de comunas por región en `Javascript/formularioContacto.js`.
+-   **Formulario de Registro y Login**: Se gestionan las validaciones para los campos de los archivos `Login.html` y `registro.html`.
+-   **Formulario de Contacto**:
+    -   El script `Javascript/formularioContacto.js` maneja los **selects anidados** de Región y Comuna, actualizando las opciones de Comuna en función de la Región seleccionada por el usuario.
 
-### Páginas Principales
-- **Game_Vibe_Store.html**: Página principal con banner, productos destacados y carrusel.
-- **Blogs.html**: Noticias y casos destacados del mundo gamer.
-- **SobreNosotros.html**: Información sobre la tienda y su misión.
-- **login.html**: Formulario de inicio de sesión.
-- **contacto.html**: Formulario de contacto.
+### 3. Componentes Reutilizables
+-   El `Navbar` y el `Footer` son componentes modulares cargados en todas las páginas mediante JavaScript. Esto permite hacer cambios en la navegación o en el pie de página modificando un solo archivo (`components/navbar.html` y `components/footer.html`).
 
 ---
 
 ## Tecnologías Utilizadas
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap 5
+-   **HTML5**
+-   **CSS3**
+-   **JavaScript**
+-   **Bootstrap 5**
+-   **JSON**: Como base de datos estática para el catálogo de productos.
 
 ---
 
 ## Cómo Ejecutar el Proyecto
-1. Clonar el repositorio:
-```bash
-git clone [URL-del-repositorio]
-```
-2. Abrir cualquier archivo `.html` directamente en el navegador.
-3. Asegurarse de mantener la estructura de carpetas `components`, `img` y `Javascript`.
+1.  **Clona el repositorio** en tu máquina local.
+2.  Navega a la carpeta del proyecto.
+3.  Abre **cualquier archivo `.html`** en tu navegador web.
+
+> **Nota**: No es necesario un servidor local para ejecutar el proyecto, ya que toda la lógica funciona del lado del cliente.
 
 ---
 
 ## Próximas Mejoras
-- **Funcionalidad de carrito de compras**: Permitir a los usuarios seleccionar productos, agregarlos a un carrito y finalizar la compra.  
-- **Integración con backend**: Implementar PHP o Node.js para procesar formularios y manejar usuarios registrados.  
-- **Validación y seguridad avanzada**: Encriptación de contraseñas, validación de formularios más robusta y protección contra ataques comunes.  
-- **Sistema de comentarios y reviews**: Permitir a los usuarios dejar reseñas en productos y artículos del blog.  
-- **Filtro y búsqueda de productos**: Agregar funcionalidad de búsqueda y filtros por categoría, precio o popularidad.  
-- **Optimización móvil y accesibilidad**: Mejoras adicionales para usuarios con dispositivos móviles y accesibilidad web.  
-- **Animaciones y mejoras visuales**: Más interactividad y animaciones usando CSS y JavaScript para mejorar la experiencia de usuario.
+-   **Funcionalidad Completa del Carrito**: Implementar la lógica en `carrito.html` para añadir, eliminar y actualizar la cantidad de productos, calculando el subtotal y total.
+-   **Integración con Backend**: Conectar el frontend a un servidor para gestionar usuarios, persistir datos en una base de datos y procesar pagos.
+-   **Filtros y Búsqueda de Productos**: Añadir una barra de búsqueda y filtros dinámicos en las páginas de categorías para mejorar la experiencia de navegación.
+-   **Optimización de Rendimiento**: Implementar "lazy loading" para las imágenes de los productos para acelerar los tiempos de carga inicial.
