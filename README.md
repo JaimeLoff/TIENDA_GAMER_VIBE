@@ -29,6 +29,7 @@ TIENDA_GAME_VIBE/
 │   ├── login-registro.js
 │   └── render-consoles.js
 │
+├── admin.html
 ├── Blogs.html
 ├── carrito.html
 ├── categorias.html
