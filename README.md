@@ -75,9 +75,18 @@ La lógica de los formularios de usuario se centraliza en `Javascript/login-regi
 ---
 
 ## Cómo Ejecutar el Proyecto
-1.  **Clona el repositorio** en tu máquina local.
-2.  Navega a la carpeta del proyecto.
-3.  Abre **cualquier archivo `.html`** en tu navegador web.
+
+1.  Clonar el repositorio:
+    ```bash
+    git clone [https://github.com/JaimeLoff/TIENDA_GAMER_VIBE.git](https://github.com/JaimeLoff/TIENDA_GAMER_VIBE.git)
+    ```
+
+2.  Navegar a la carpeta:
+    ```bash
+    cd TIENDA_GAMER_VIBE
+    ```
+
+3.  Abrir cualquier archivo `.html` en tu navegador web.
 
 > **Nota**: No es necesario un servidor local para ejecutar el proyecto, ya que toda la lógica funciona del lado del cliente.
 
