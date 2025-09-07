@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="d-grid gap-2">
-                    <a href="Game_Vibe_Store.html" class="btn btn-primary" role="button">Iniciar Sesión</a>
+                    <a id="btn-login" href="Game_Vibe_Store.html" class="btn btn-primary" role="button">Iniciar Sesión</a>
                 </div>
             </form>
         </div>
@@ -58,12 +58,34 @@
             .catch(error => console.error('Error cargando footer:', error));
     </script>
 
+    <script> const btnlogin = document.getElementById('btn-login');
+        btnlogin.addEventListener('click', function(event) {
+            event.preventDefault(); // Evita el comportamiento por defecto del enlace
 
+            // Aquí puedes agregar la lógica de validación del formulario si es necesario
 
+            // Mostrar SweetAlert2
+            Swal.fire({
+                icon: 'success',
+                title: '¡Inicio de sesión exitoso!',
+                text: 'Redirigiendo a la tienda...',
+                timer: 2000,
+                showConfirmButton: false
+            }).then(() => {
+                // Redirigir después de que se cierre la alerta
+                window.location.href = 'Game_Vibe_Store.html';
+            });
+        });
+    
+    </script>
+
+    
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 
