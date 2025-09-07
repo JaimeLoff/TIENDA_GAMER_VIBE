@@ -78,7 +78,7 @@ La lógica de los formularios de usuario se centraliza en `Javascript/login-regi
 
 1.  Clonar el repositorio:
     ```bash
-    git clone [https://github.com/JaimeLoff/TIENDA_GAMER_VIBE.git](https://github.com/JaimeLoff/TIENDA_GAMER_VIBE.git)
+    git clone https://github.com/JaimeLoff/TIENDA_GAMER_VIBE.git
     ```
 
 2.  Navegar a la carpeta:
