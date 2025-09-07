@@ -1,7 +1,7 @@
 # GameVibe - Tienda Online de Juegos
 
 ## Descripción
-GameVibe es una tienda online de juegos de mesa y electrónicos que ofrece productos destacados, noticias y contacto con los usuarios. El proyecto está construido utilizando **HTML**, **CSS**, **JavaScript** y **Bootstrap 5** para un diseño responsivo y moderno.
+GameVibe es una tienda online de juegos de mesa y electrónicos que ofrece productos destacados, noticias y contacto con los usuarios. El proyecto está construido utilizando **HTML**, **CSS**, **JavaScript** y **Bootstrap 5** para un diseño responsivo y moderno....
 
 ---
 
