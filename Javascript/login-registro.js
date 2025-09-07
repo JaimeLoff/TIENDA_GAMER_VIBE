@@ -95,8 +95,24 @@ if (loginForm) {
             isValid = false;
         }
 
-        // Mostrar alerta de éxito si es válido
-        if (isValid) {
+        // Si la validación básica falla, detener la ejecución.
+        if (!isValid) {
+            return;
+        }
+
+        // Si la validación pasa, ejecuta la lógica de redirección
+        if (emailInput.value === 'admin@gamevibe.com' && passwordInput.value === 'Admin123') {
+            Swal.fire({
+                icon: 'success',
+                title: '¡Inicio de sesión como Administrador!',
+                text: 'Redirigiendo a la página de administración...',
+                showConfirmButton: false,
+                timer: 2000
+            }).then(() => {
+                window.location.href = 'admin.html'; // Redirige a la página del administrador
+            });
+        } else {
+            // Si no son las credenciales de administrador, redirige a la página principal
             Swal.fire({
                 icon: 'success',
                 title: '¡Inicio de sesión exitoso!',
