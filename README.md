@@ -88,8 +88,6 @@ La lógica de los formularios de usuario se centraliza en `Javascript/login-regi
 
 3.  Abrir cualquier archivo `.html` en tu navegador web.
 
-> **Nota**: No es necesario un servidor local para ejecutar el proyecto, ya que toda la lógica funciona del lado del cliente.
-
 ---
 
 ## Próximas Mejoras
