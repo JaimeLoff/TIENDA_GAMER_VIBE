@@ -312,3 +312,60 @@ img.category-img {
     height: 100%;
     object-fit: cover;
 }
+
+/* =========================================
+   CARRUSEL PERSONALIZADO CORREGIDO
+   ========================================= */
+
+/* 1. Tamaño del contenedor principal */
+.custom-carousel {
+    max-width: 650px !important;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+/* 2. Fondo transparente para contenedores y estados de animación */
+.custom-carousel,
+.custom-carousel .carousel-inner,
+.custom-carousel .carousel-item,
+.custom-carousel .carousel-item-next,
+.custom-carousel .carousel-item-prev,
+.custom-carousel .carousel-item.active {
+    background-color: transparent !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 3. Ajuste de imagen: se muestra clara y con margen inferior */
+.custom-carousel .carousel-img-custom {
+    height: 300px !important;
+    object-fit: contain !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    margin-bottom: 20px;
+
+    /* Filtro para suavizar el blanco sin oscurecer la imagen entera */
+    filter: contrast(105%);
+}
+
+/* 4. Posicionamiento flotante del cuadro de texto */
+.custom-carousel .carousel-caption {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 10px auto 0 auto !important;
+    max-width: 85%;
+    background-color: rgba(20, 30, 48, 0.85) !important;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(0, 200, 150, 0.4);
+    border-radius: 12px;
+    padding: 15px;
+}
+
+/* 5. Ajuste de posición de los indicadores (rayitas) */
+.custom-carousel .carousel-indicators {
+    margin-bottom: -25px !important;
+}
