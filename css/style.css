@@ -1,6 +1,10 @@
 /* =========================
     ESTILOS GENERALES
     ========================= */
+html {
+    height: 100%;
+}
+
 body {
     background: linear-gradient(135deg, #141E30, #243B55);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,7 +12,16 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    /* evita rectángulo lateral */
+
+    /* REGLAS PARA STICKY FOOTER */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* El elemento principal empuja al footer cuando hay poco contenido */
+main, .container:not(footer .container) {
+    flex: 1 0 auto;
 }
 
 /* =========================
@@ -261,12 +274,18 @@ h3 {
 /* =========================
     FOOTER
     ========================= */
+#footer-placeholder {
+    margin-top: auto;
+    width: 100%;
+}
+
 footer {
     background-color: #141E30;
     color: #ccc;
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
+    width: 100%;
 }
 
 footer a {
@@ -369,3 +388,4 @@ img.category-img {
 .custom-carousel .carousel-indicators {
     margin-bottom: -25px !important;
 }
+
