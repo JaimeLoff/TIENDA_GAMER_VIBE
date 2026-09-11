@@ -2,8 +2,6 @@
 const form = document.getElementById('contactForm');
 const nombreInput = document.getElementById('nombre');
 const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('contraseña');
-const confirmPasswordInput = document.getElementById('Confcontra');
 const telefonoInput = document.getElementById('Telefono');
 const regionSelect = document.getElementById('region');
 const comunaSelect = document.getElementById('comuna');
@@ -48,8 +46,6 @@ function actualizarComunas() {
 
 // Prevenir que se ingresen letras en el campo de teléfono
 telefonoInput.addEventListener('keydown', function (e) {
-    // Si la tecla presionada no es un número (0-9) y no es una tecla de control como backspace, flechas, etc.,
-    // evita la acción por defecto.
     const validKeys = ['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete', 'Tab'];
     if (!/^[0-9]$/.test(e.key) && !validKeys.includes(e.key)) {
         e.preventDefault();
@@ -68,10 +64,8 @@ const isValidPhone = (phone) => {
 };
 
 // --- MANEJO DEL FORMULARIO ---
-// Escuchamos el evento de cambio en el select de la región
 regionSelect.addEventListener('change', actualizarComunas);
 
-// Escuchamos el evento de envío del formulario
 form.addEventListener('submit', function (event) {
     let isValid = true;
     event.preventDefault(); // Evita que el formulario se envíe
@@ -89,16 +83,6 @@ form.addEventListener('submit', function (event) {
 
     if (!isValidEmail(emailInput.value)) {
         emailInput.classList.add('is-invalid');
-        isValid = false;
-    }
-
-    if (passwordInput.value.length < 8) {
-        passwordInput.classList.add('is-invalid');
-        isValid = false;
-    }
-
-    if (passwordInput.value !== confirmPasswordInput.value || confirmPasswordInput.value.length < 8) {
-        confirmPasswordInput.classList.add('is-invalid');
         isValid = false;
     }
 
